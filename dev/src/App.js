@@ -3,19 +3,19 @@ import { Grid } from '@material-ui/core'
 import GameBoard from './Components/GameBoard'
 import GameDetails from './Components/GameDetails'
 import PlayerDetails from './Components/PlayerDetails'
-const App = () => {
+import {connect} from 'react-redux'
 
-  const [currentPage, setCurrentPage] = useState(1)
+const App = (props) => {
 
 
   return (
     <div style={{ background: 'black' }}  >
       <div style={{  margin: 'auto',height:'100vh' }}  >
-        {currentPage === 1 ?
-          <GameDetails nextPage={() => setCurrentPage(currentPage + 1)} />
+        {props.currentPage === 1 ?
+          <GameDetails />
           :
-          currentPage === 2 ?
-            <PlayerDetails nextPage={() => setCurrentPage(currentPage + 1)} />
+          props.currentPage === 2 ?
+            <PlayerDetails />
             :
             <GameBoard />
         }
@@ -23,5 +23,12 @@ const App = () => {
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  const { currentPage } = state.app
+  return {currentPage}
+}
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+ return{}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(App);

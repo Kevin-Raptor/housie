@@ -9,26 +9,20 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 
 const theme = createMuiTheme({
-  typography: {
-    h1: {
 
-    },
-
-
-  },
   palette: {
     primary: {
-      main: '#4472c4',
+      main: '#cd4631',
+      dark: '#3A405A',
       contrastText: '#ffffff'
     },
     secondary: {
-      main: '#ffffff',
+      main: '#000000',
+      dark: '#CC0000',
       contrastText: '#000000'
     }
   },
-  overrides: {
 
-  },
 });
 
 ReactDOM.render(
