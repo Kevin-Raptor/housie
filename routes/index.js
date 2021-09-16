@@ -38,8 +38,8 @@ router.post('/send', (req, res) => {
   const output = `
   <div style="border:3px #ae0000 solid;width:fit-content">
     <div style="display:flex;margin-left:20px;">
-        <h3>${req.body.name}</h3>
-        <h3 style="margin-left:20px;">Host Name</h3>
+      <h3 style="margin-left:20px;">Host Name - </h3>
+      <h3>${req.body.name}</h3>
     </div>
     <table style="background-color:#ffffb0;text-align:center;font-weight:bold;border:3px #005b9c solid;margin:20px">
       <tr>
@@ -108,10 +108,10 @@ router.post('/send', (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: 'KDB <automated.game.mailer@gmail.com>', // sender address
+    from: 'Automated Mailer <automated.game.mailer@gmail.com>', // sender address
     to: req.body.email, // list of receivers
-    subject: 'Cards', // Subject line
-    text: 'Hello world?', // plain text body
+    subject: 'Housie Ticket', // Subject line
+    text: '', // plain text body
     html: output // html body
   };
 
